@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title|default:"Full Stack Project" }}</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header><a class="brand" href="/">TaskFlow</a><nav>
+{% if user.is_authenticated %}<span>Hi, {{ user.username }}</span><form method="post" action="/accounts/logout/">{% csrf_token %}<button class="link">Sign out</button></form>
+{% else %}<a href="/accounts/login/">Login</a><a href="/register/">Register</a>{% endif %}
+</nav></header><main>{% if messages %}{% for message in messages %}<p class="notice">{{ message }}</p>{% endfor %}{% endif %}
+{% block content %}{% endblock %}</main><footer>Student Full Stack Development Project</footer></body></html>

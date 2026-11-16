@@ -1,0 +1,1 @@
+{% extends "base.html" %}{% block content %}<section class="panel" style="max-width:480px;margin:auto"><h1>Create account</h1><form method="post">{% csrf_token %}{{ form.as_p }}<button>Create account</button></form></section>{% endblock %}
